@@ -25,9 +25,9 @@ app.use(
 );
 
 if(process.env.NODE_ENV === 'production') {
-  app.use(express.static('book-app/build'));
+  app.use(express.static('books-app/build'));
   app.get('*',(req,res) => {
-    res.sendfile(path.resolve(__dirname, 'book-app', 'build', 'index.html'))
+    res.sendfile(path.resolve(__dirname, 'books-app', 'build', 'index.html'))
   });
 }
 
