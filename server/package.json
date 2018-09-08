@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "books-app-install":"npm install --prefix books-app",
+    "start": "node app.js",
+    "server":"nodemon app.js",
+    "books-app":"npm start --prefix books-app",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix books-app && npm run build --prefix books-app"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
