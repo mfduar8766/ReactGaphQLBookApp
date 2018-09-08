@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const port = process.env.PORT || 5000;
 const url = require("./ConnectionString");
+const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -22,6 +23,16 @@ app.use(
     graphiql: true
   })
 );
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('books-app/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'books-app', 'build', 'index.html'));
+  });
+}
 
 app.listen(port, () => {
   console.log("Running on port: 4000");
