@@ -2,8 +2,10 @@
   "name": "books-app",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://mfduar8766.github.io/ReactGaphQLBookApp/",
   "dependencies": {
     "apollo-boost": "^0.1.4",
+    "gh-pages": "^1.2.0",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.8.0",
     "react": "^16.3.1",
@@ -15,6 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   }
 }
