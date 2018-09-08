@@ -4,7 +4,7 @@ const schema = require("./schema/schema");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const port = process.env.PORT || 5000;
-const url = require("./ConnectionString");
+const url = require("./Config/ConnectionString");
 
 const app = express();
 app.use(cors());
