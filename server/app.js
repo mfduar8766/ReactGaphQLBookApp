@@ -9,7 +9,7 @@ const url = require("./ConnectionString");
 const app = express();
 app.use(cors());
 
-mongoose.connect(url);
+mongoose.connect(url.mongoURI);
 
 mongoose.connection.once("open", () => {
   console.log("connected to DB.");
